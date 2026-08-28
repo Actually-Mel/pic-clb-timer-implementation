@@ -5,5 +5,14 @@ This is a repository with the design files of a timer implemented on the Configu
 - **bitstream.S**: the raw bitstream of the design.
 - **clbtimer.S**: quick test program showcasing the application of the CLB timer. It's also a good reference on how to manually configure the Mmemory Scanner module to load a bitstream into the Configurable Logic Block module.
 
+**Features:**
+- 8 bit counter
+- Configurable period through the CLBSWIN register
+- Toggle output available through PPS
+- Interrupt Request output
+- Reset on period match, period update (writing to CLBSWIN) and CLC4 output
+
+**Image:**
+
 <img width="736" height="667" alt="image" src="https://github.com/user-attachments/assets/85c1e672-ce4d-424d-a2c5-5934641d255b" />
 
