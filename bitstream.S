@@ -1,0 +1,172 @@
+/*
+    © [2026] Microchip Technology Inc. and its subsidiaries.
+
+    Subject to your compliance with these terms, you may use this Microchip
+    software and any derivatives exclusively with Microchip products.
+    You are responsible for complying with third party license terms
+    applicable to your use of third party software (including open source
+    software) that may accompany this Microchip software. SOFTWARE IS "AS IS."
+    NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS
+    SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT,
+    MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT
+    WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE,
+    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY
+    KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF
+    MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE
+    FORESEEABLE. TO THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S
+    TOTAL LIABILITY ON ALL CLAIMS RELATED TO THE SOFTWARE WILL NOT
+    EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR
+    THIS SOFTWARE.
+
+    CLB bitstream data for PIC16F13145 family devices.
+
+    If the CLB data must be at a particular address, define the
+    'CLB_CONFIG_ADDR' C macro to set the address. If the location of the data
+    does not matter, then leave this macro undefined. The compiler will
+    automatically find an optimal place in program memory.
+
+    If the CLB_CONFIG_ADDR macro is not being used, the data may be
+    referenced in C with the 'start_clb_config' symbol.
+    For example:
+        extern uint16_t start_clb_config;
+        uint16_t addr;
+        addr = &start_clb_config;
+
+    NOTE: Always use the address of this symbol and not the value.
+
+    This module requires C preprocessing.
+    This can be enabled via the command line option: -xassembler-with-cpp
+*/
+
+#include "clb1_defs.h"
+
+// #define CLB_CONFIG_ADDR <address of bitstream>
+
+#if !(defined(_16F13113) || defined(_16F13114) || defined(_16F13115) \
+    || defined(_16F13123) || defined(_16F13124) || defined(_16F13125) \
+    || defined(_16F13143) || defined(_16F13144) || defined(_16F13145))
+    #error This module is only suitable for PIC16F13145 family devices
+#endif
+
+// Check to verify that the header file matches the generated bitstream
+#if CLB_BITSTREAM_LENGTH != 102
+    #error The CLB module for this device has a 102 words long bitstream
+#endif
+
+#ifdef CLB_CONFIG_ADDR
+    psect clb_config,global,class=STRCODE,abs,ovrld,delta=2,noexec,split=0,merge=0,keep
+#else
+    psect clb_config,global,class=STRCODE,delta=2,noexec,split=0,merge=0,keep
+#endif
+
+global _start_clb_config
+
+psect   clb_config
+#ifdef CLB_CONFIG_ADDR
+    ORG CLB_CONFIG_ADDR
+#endif
+
+_start_clb_config:
+    dw  0x0080;
+    dw  0x3922;
+    dw  0x0030;
+    dw  0x3E1F;
+    dw  0x03F0;
+    dw  0x3F27;
+    dw  0x0200;
+    dw  0x1126;
+    dw  0x33F8;
+    dw  0x319F;
+    dw  0x19F0;
+    dw  0x0947;
+    dw  0x0076;
+    dw  0x0E07;
+    dw  0x00D1;
+    dw  0x3D06;
+    dw  0x03E1;
+    dw  0x3DFF;
+    dw  0x3E20;
+    dw  0x3E1F;
+    dw  0x3FEF;
+    dw  0x0A23;
+    dw  0x11A4;
+    dw  0x0107;
+    dw  0x33F8;
+    dw  0x047F;
+    dw  0x262C;
+    dw  0x3E73;
+    dw  0x30E3;
+    dw  0x3E1F;
+    dw  0x3FE0;
+    dw  0x0DFF;
+    dw  0x2815;
+    dw  0x3D5F;
+    dw  0x15F0;
+    dw  0x09E7;
+    dw  0x2027;
+    dw  0x0E04;
+    dw  0x00E0;
+    dw  0x0507;
+    dw  0x03FF;
+    dw  0x3C00;
+    dw  0x1FF0;
+    dw  0x3F87;
+    dw  0x0073;
+    dw  0x0E1F;
+    dw  0x30A0;
+    dw  0x0F9F;
+    dw  0x33E6;
+    dw  0x3D81;
+    dw  0x07F5;
+    dw  0x1024;
+    dw  0x00C0;
+    dw  0x019F;
+    dw  0x3239;
+    dw  0x3D9F;
+    dw  0x33F8;
+    dw  0x099F;
+    dw  0x19F2;
+    dw  0x0412;
+    dw  0x20A0;
+    dw  0x0205;
+    dw  0x3070;
+    dw  0x1E81;
+    dw  0x2935;
+    dw  0x3D5F;
+    dw  0x15F0;
+    dw  0x0B5F;
+    dw  0x0075;
+    dw  0x021F;
+    dw  0x3080;
+    dw  0x199F;
+    dw  0x33F8;
+    dw  0x019F;
+    dw  0x19FC;
+    dw  0x3F81;
+    dw  0x33EC;
+    dw  0x3E1F;
+    dw  0x30C0;
+    dw  0x0E65;
+    dw  0x00F0;
+    dw  0x1803;
+    dw  0x2E6C;
+    dw  0x3F83;
+    dw  0x03F0;
+    dw  0x0F16;
+    dw  0x2351;
+    dw  0x3D1F;
+    dw  0x23F1;
+    dw  0x3D1F;
+    dw  0x11F8;
+    dw  0x3F1F;
+    dw  0x23E8;
+    dw  0x3F1F;
+    dw  0x23F1;
+    dw  0x3D1F;
+    dw  0x0C00;
+    dw  0x0000;
+    dw  0x0000;
+    dw  0x0000;
+    dw  0x3800;
+    dw  0x0006;
+
